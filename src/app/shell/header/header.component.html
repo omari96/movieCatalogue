@@ -1,0 +1,25 @@
+<header class="sticky-top">
+    <div class="navbar bg-transparent text-dark  shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <img src="/assets/images/logo.svg" class="me-2" />
+                <strong class="tittle-color">{{ "TITLE" | translate }}</strong>
+            </a>
+            <div class=" d-flex justify-content-center">
+                <!-- <ng-container *ngIf="!isLoginedIn">
+                    <button (click)="goToSignIn()" class="btn btn-outline-light border-color me-2">
+                        {{ "auth.SIGN_IN" | translate }}
+                    </button>
+                    <button (click)="goToSignUp()" class="btn btn-outline-light border-color me-2">
+                        {{ "auth.SIGN_UP" | translate }}
+                    </button>
+                </ng-container> -->
+                <button *ngIf="isLoginedIn" (click)="signOut()" class="btn btn-danger me-2">
+                    {{ "auth.SIGN_OUT" | translate }}
+                </button>
+                <button class="lang en ms-2" [class.inactive]="isKa" (click)="en()"></button>
+                <button class="lang ka ms-2" [class.inactive]="isEn" (click)="ka()"></button>
+            </div>
+        </div>
+    </div>
+</header>

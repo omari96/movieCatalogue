@@ -1,0 +1,31 @@
+{
+    "TITLE": "ფილმების კატალოგი",
+    "errors": {
+        "NOT_FOUND": "გვერდი ვერ მოიძებნა",
+        "ENTER_MOVIE_NAME": "გთხოვთ მიუთითოთ ფილმის სახელი!",
+        "PASSWORD_REQUIRED": "პაროლი სავალდებულოა",
+        "EMAIL_REQUIRED": "ელ-ფოსტა სავალდებულოა",
+        "PLEASE_REAPET_PASSWORD": "გთხოვთ გაიმეოროთ პაროლი"
+    },
+    "auth": {
+        "SIGN_IN": "შესვლა",
+        "SIGN_UP": "რეგისტრაცია",
+        "SIGN_OUT": "გამოსვლა",
+        "EMAIL": "ელ-ფოსტა",
+        "PASSWORD": "პაროლი",
+        "REAPEAT_PASSWORD": "გაიმეორეთ პაროლი"
+    },
+    "catalogue": {
+        "ADD_MOVIE": "ფილმის დამატება",
+        "ENTER_MOVIE_NAME": "ჩაწერეთ ფილმის სახელი...",
+        "SEARCH": "ძებნა",
+        "WATCHED": "ნანახი",
+        "WATCH_LATER": "მოგვიანებით სანახავი",
+        "TOMORROW": "ხვალ",
+        "THIS_WEEK": "ამ კვირას",
+        "THIS_MONTH": "ამ თვეს",
+        "THIS_YEAR": "ამ წელს",
+        "SELECT": "არჩევა...",
+        "MOVIE_HAS_BEEN_ADDED": "ფილმი დაემატა"
+    }
+}

@@ -1,0 +1,106 @@
+<main>
+
+  <div class="vh-100 py-5 bg-light">
+    <div class="row d-flex justify-content-center">
+      <div class="search-form d-flex justify-content-center flex-column">
+        <input class="px-2 " type="text"
+          placeholder="{{'catalogue.ENTER_MOVIE_NAME' | translate}}"
+          [(ngModel)]="searchKey">
+        <button class="btn btn-secondary mt-4"
+          (click)="search(searchKey)">{{"catalogue.SEARCH" |
+          translate}}</button>
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="hasError">
+          {{"errors.ENTER_MOVIE_NAME" | translate}}
+        </div>
+        <div class="row d-flex justify-content-center mt-4 flex-row">
+          <div class=" d-flex justify-content-center">
+            <span class=" badge rounded-pill bg-success ms-1"
+              *ngFor="let name of lastThreeSearches"
+              (click)="fetchMovie(name)">{{name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center" *ngIf="selectedMovie">
+      <span *ngFor="let country of selectedMovie.countries">
+        <ng-container *ngIf="country">
+          <img [src]="getCountryFlag(country.code)" [title]="country.population">
+        </ng-container>
+      </span>
+      <h3 class=" text-center"> {{selectedMovie.title}}</h3>
+      <img class="poster" [src]="selectedMovie.poster" [alt]="selectedMovie.title">
+      <span class="w-50"> {{selectedMovie.plot}}</span>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-5">
+      <form [formGroup]="form">
+        <div class="row mb-3 ">
+          <label for="review" class="col-sm-2 col-form-label">Review</label>
+          <div class="col-sm-10">
+            <textarea formControlName="review" class="form-control"
+              id="review"></textarea>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="rating" class="col-sm-2 col-form-label">Rating</label>
+          <div class="col-sm-10">
+
+            <span class="ms-2 " *ngFor="let rating of ratings">
+              <input type="radio" class="ms-2 " [value]="rating" name="rating"
+                formControlName="rating">
+              <label></label>
+            </span>
+
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="status" class="col-sm-2 col-form-label">Status</label>
+          <div class="col-sm-10">
+            <select formControlName="status" class="form-select">
+              <option [value]="status.Watched">{{"catalogue.WATCHED" | translate}}
+              </option>
+              <option [value]="status.WatchedLater">{{"catalogue.WATCH_LATER" |
+                translate}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3" *ngIf='canWatchLater'>
+          <label for="status" class="col-sm-2 col-form-label">When to watch</label>
+          <div class="col-sm-10">
+            <select formControlName="whenToWatch" class="form-select">
+              <option [value]="null" hidden>{{"catalogue.SELECT" | translate}}</option>
+              <option *ngFor="let v of whenToWatch" [value]='v.value'>{{v.label
+                |translate}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="submit()">Add</button>
+
+        <ng-container *ngIf="submited && form.invalid">
+          <div class=" mt-3 alert alert-danger" role="alert"
+            *ngIf="form.controls.review?.errors?.required">
+            <!-- {{"catalogue.ENTER_MOVIE_NAME" | translate}} -->
+            რევიუ სავალდებულოა
+          </div>
+          <div class=" mt-3 alert alert-danger" role="alert"
+            *ngIf="form.controls.review?.errors?.minlength">
+            <!-- {{"catalogue.ENTER_MOVIE_NAME" | translate}} -->
+            განხილვა უნდა იყოს მინინმუმ 10 სიმბოლო
+          </div>
+          <div class=" mt-3 alert alert-danger" role="alert"
+            *ngIf="form.controls.whenToWatch?.errors?.required">
+            <!-- {{"catalogue.ENTER_MOVIE_NAME" | translate}} -->
+            გთხოვთ მონიშნოთ როდის გინდათ ყურება
+          </div>
+        </ng-container>
+
+      </form>
+    </div>
+  </div>
+
+
+
+</main>

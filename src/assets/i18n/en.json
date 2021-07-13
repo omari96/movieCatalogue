@@ -1,0 +1,32 @@
+{
+    "TITLE": "Movie Catalogue",
+    "errors": {
+        "NOT_FOUND": "Page Not Found",
+        "ENTER_MOVIE_NAME": "You must enter movie name!",
+        "EMAIL_REQUIRED": "Email is required",
+        "PASSWORD_REQUIRED": "Password is required",
+        "PLEASE_REAPET_PASSWORD": "Please reapet password"
+
+    },
+    "auth": {
+        "SIGN_IN": "SING IN",
+        "SIGN_UP": "SING UP",
+        "SIGN_OUT": "Sign Out",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "REAPEAT_PASSWORD": "Reapeat Password"
+    },
+    "catalogue": {
+        "ADD_MOVIE": "Add Movie",
+        "ENTER_MOVIE_NAME": "Enter Movie Name...",
+        "SEARCH": "Search",
+        "WATCHED": "Watched",
+        "WATCH_LATER": "Watch Later",
+        "TOMORROW": "Tomorrow",
+        "THIS_WEEK": "This Week",
+        "THIS_MONTH": "This Month",
+        "THIS_YEAR": "This Year",
+        "SELECT": "Select...",
+        "MOVIE_HAS_BEEN_ADDED": "Movie has been added"
+    }
+}
